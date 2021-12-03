@@ -16,6 +16,14 @@ RSpec.describe Journal do
         expect(instance.total).to eq 16.0
       end
     end
+
+    context 'with credit line' do
+      let(:instance) { journal.new(credit1) }
+
+      it 'returns the correct sum' do
+        expect(instance.total).to eq -8.0
+      end
+    end
   end
 
   # Write some more specs anywhere in this File
